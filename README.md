@@ -99,6 +99,10 @@ The platform adheres to a strict "Scientific Minimalist" design language:
 - **Palette**: Monochromatic base with `Atomic Orange` (#FF5F00) highlights for active states.
 - **Transitions**: 500ms duration for theme shifts to simulate atmospheric adjustment.
 
+## ⚖️ License
+
+This project is proprietary and provided for **showcase purposes only**. All rights are reserved by Hasnain Chohan. See the [LICENSE](LICENSE) file for detailed restrictions.
+
 ---
 
 **Developed by E01-LABS // © 2026. Molecular Discovery Protocol v4.2.**

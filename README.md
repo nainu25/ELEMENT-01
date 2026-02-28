@@ -1,6 +1,6 @@
 # ELEMENT-01 // Digital Olfactory Laboratory
 
-![ELEMENT-01 Banner] ![alt text](./element-01/src//assets/Dashboard.png)
+![ELEMENT-01 Laboratory Snapshot](./element-01/src/assets/Dashboard_Dark.png)
 
 **ELEMENT-01** is a high-performance, molecular-focused fragrance discovery platform. It treats scent selection as a scientific process, utilizing a "Digital Laboratory" aesthetic to bridge the gap between complex chemistry and luxury consumer experience.
 
@@ -10,6 +10,30 @@ The project is built around the concept of **Olfactory Allocation**. Instead of 
 - **Formula Codes**: Unique identifiers for every specimen.
 - **Molecular Data**: Precise tracking of weight, concentration, and volatility.
 - **Structural Hierarchy**: Visualization of top, heart, and base layers as a molecular pyramid.
+
+## 🖼️ Visual Interface (Light vs Dark Mode)
+
+The platform features a dynamic theming system designed for both clinical precision and atmospheric depth.
+
+### 01. Central Repository (Dashboard)
+| Laboratory_Light | Atmospheric_Dark |
+| :---: | :---: |
+| ![Dashboard Light](./element-01/src/assets/Dashboard_LIght.png) | ![Dashboard Dark](./element-01/src/assets/Dashboard_Dark.png) |
+
+### 02. Scent Discovery Protocol
+| Diagnostic Phase | Resulting Allocation |
+| :---: | :---: |
+| ![Phase 1 Light](./element-01/src/assets/Scent_Discovery_1_Light.png) | ![Result Dark](./element-01/src/assets/Scent_Discovery_3_Dark.png) |
+
+### 03. Allocation Protocol (Checkout)
+| Requisition Form | Secured Payment |
+| :---: | :---: |
+| ![Checkout Light](./element-01/src/assets/Checkout_Light.png) | ![Checkout Dark](./element-01/src/assets/Checkout_Dark.png) |
+
+### 04. Logistics (Inventory Management)
+| Resource Index | Specimen Modification |
+| :---: | :---: |
+| ![Inventory Dark](./element-01/src/assets/Inventory_Dark.png) | ![Modification Light](./element-01/src/assets/Product_Modification_Light.png) |
 
 ## 🚀 Key Features
 

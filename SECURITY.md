@@ -3,7 +3,7 @@
 ## [01] SYSTEM_VULNERABILITY_REPORTING
 We prioritize the integrity of the Molecular Registry. If you identify a security breach or vulnerability within the **ELEMENT-01** architecture, please initiate a report via the following secure channel:
 
-- **Primary Contact:** [chohanhasnain24@gmail.com]
+- **Primary Contact:** [chohanhasnain24@gmail.com](mailto:chohanhasnain24@gmail.com)
 - **Encryption:** All reports should be PGP-signed where possible.
 - **Protocol:** Please allow 48-72 hours for diagnostic confirmation before public disclosure.
 

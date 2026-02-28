@@ -3,13 +3,13 @@ import * as motion from "framer-motion/client";
 
 export default function QuizPage() {
     return (
-        <main className="min-h-screen bg-[#F2F2F2] font-mono text-black overflow-x-hidden pt-32 px-8 pb-32">
+        <main className="min-h-screen bg-[rgb(var(--background-rgb))] font-mono text-[rgb(var(--foreground-rgb))] overflow-x-hidden pt-32 px-8 pb-32 transition-colors duration-500">
             <div className="max-w-7xl mx-auto space-y-16">
-                <header className="border-b-4 border-black pb-8 flex flex-col items-start gap-4">
+                <header className="border-b-4 border-[rgb(var(--border-color))] pb-8 flex flex-col items-start gap-4">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="bg-black text-white px-4 py-1 text-[10px] font-black uppercase tracking-[0.5em]"
+                        className="bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] px-4 py-1 text-[10px] font-black uppercase tracking-[0.5em] transition-colors duration-500"
                     >
                         DIAGNOSTIC_PROTOCOL_V4.2
                     </motion.div>
@@ -33,7 +33,7 @@ export default function QuizPage() {
                     <ScentDiscovery />
                 </motion.div>
 
-                <footer className="pt-16 border-t border-black/10 flex grid grid-cols-1 md:grid-cols-3 gap-12 text-[10px] uppercase font-black tracking-widest leading-relaxed">
+                <footer className="pt-16 border-t border-[rgb(var(--border-color)/10%)] grid grid-cols-1 md:grid-cols-3 gap-12 text-[10px] uppercase font-black tracking-widest leading-relaxed transition-colors duration-500">
                     <div className="space-y-4">
                         <p className="opacity-40">[ PARAMETER_01 ]</p>
                         <p>Environmental compatibility analysis across synthetic and organic libraries.</p>

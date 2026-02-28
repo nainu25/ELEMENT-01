@@ -4,6 +4,8 @@ import Navbar from "@/components/layout/Navbar";
 import CartDrawer from "@/components/layout/CartDrawer";
 import "./globals.css";
 
+import Providers from "@/Providers";
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -24,9 +26,11 @@ export default function RootLayout({
       <body
         className={`${geistMono.variable} font-mono antialiased`}
       >
-        <Navbar />
-        <CartDrawer />
-        {children}
+        <Providers>
+          <Navbar />
+          <CartDrawer />
+          {children}
+        </Providers>
       </body>
     </html>
   );

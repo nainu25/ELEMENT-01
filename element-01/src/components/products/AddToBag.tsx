@@ -51,11 +51,17 @@ export default function AddToBag({ product }: AddToBagProps) {
             </AnimatePresence>
 
             <motion.button
-                whileHover={{ scale: 1.02, backgroundColor: "#000", color: "#fff" }}
+                whileHover={{
+                    scale: 1.02,
+                    backgroundColor: "rgb(var(--foreground-rgb))",
+                    color: "rgb(var(--background-rgb))"
+                }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleAdd}
                 disabled={status !== "idle"}
-                className={`w-full py-6 border-2 border-black font-black uppercase tracking-widest text-lg transition-all duration-300 group relative overflow-hidden ${status === "success" ? "bg-orange-500 border-orange-500 text-white" : "bg-white text-black"
+                className={`w-full py-6 border-2 border-[rgb(var(--border-color))] font-black uppercase tracking-widest text-lg transition-all duration-300 group relative overflow-hidden ${status === "success"
+                        ? "bg-orange-500 border-orange-500 text-white"
+                        : "bg-[rgb(var(--card-bg))] text-[rgb(var(--foreground-rgb))]"
                     }`}
             >
                 <span className="relative z-10">
@@ -70,7 +76,7 @@ export default function AddToBag({ product }: AddToBagProps) {
                         initial={{ x: "-100%" }}
                         animate={{ x: "100%" }}
                         transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 bg-neutral-200 pointer-events-none"
+                        className="absolute inset-0 bg-[rgb(var(--foreground-rgb)/10%)] pointer-events-none"
                     />
                 )}
 
@@ -86,7 +92,9 @@ export default function AddToBag({ product }: AddToBagProps) {
 
             <div className="mt-2 text-[10px] text-neutral-400 uppercase tracking-tighter flex justify-between px-1">
                 <span>[ ID: {product.id.slice(0, 8)} ]</span>
-                <span className="animate-pulse">AVAILABLE_STOCK: 50 UNITS</span>
+                <span className={product.stock_quantity < 10 ? "text-red-500 font-bold" : "animate-pulse"}>
+                    AVAILABLE_STOCK: {product.stock_quantity} UNITS
+                </span>
             </div>
         </div>
     );

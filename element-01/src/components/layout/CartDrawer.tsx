@@ -42,10 +42,10 @@ export default function CartDrawer() {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed top-0 right-0 h-full w-full max-w-md bg-[#0A0A0A] text-white z-[201] font-mono flex flex-col border-l border-white/10"
+                        className="fixed top-0 right-0 h-full w-full max-w-md bg-[rgb(var(--card-bg))] text-[rgb(var(--foreground-rgb))] z-[201] font-mono flex flex-col border-l border-[rgb(var(--border-color)/10%)] transition-colors duration-500"
                     >
                         {/* Header */}
-                        <header className="p-8 border-b border-white/10 flex justify-between items-center">
+                        <header className="p-8 border-b border-[rgb(var(--border-color)/10%)] flex justify-between items-center">
                             <div className="flex items-center gap-3">
                                 <ShoppingBag className="w-5 h-5 text-orange-500" />
                                 <h2 className="text-xl font-black uppercase tracking-tighter">System_Cart</h2>
@@ -95,8 +95,8 @@ export default function CartDrawer() {
                                             </p>
                                         </div>
 
-                                        <div className="flex items-center justify-between pt-4 border-t border-white/5 opacity-80 group-hover:opacity-100 transition-opacity">
-                                            <div className="flex items-center border border-white/20">
+                                        <div className="flex items-center justify-between pt-4 border-t border-[rgb(var(--border-color)/5%)] opacity-80 group-hover:opacity-100 transition-opacity">
+                                            <div className="flex items-center border border-[rgb(var(--border-color)/20%)]">
                                                 {item.price > 0 ? (
                                                     <>
                                                         <button
@@ -105,7 +105,7 @@ export default function CartDrawer() {
                                                         >
                                                             <Minus className="w-3 h-3" />
                                                         </button>
-                                                        <span className="w-8 text-center text-xs font-bold border-x border-white/20">
+                                                        <span className="w-8 text-center text-xs font-bold border-x border-[rgb(var(--border-color)/20%)]">
                                                             {item.quantity}
                                                         </span>
                                                         <button
@@ -135,7 +135,7 @@ export default function CartDrawer() {
 
                         {/* Footer */}
                         {items.length > 0 && (
-                            <footer className="p-8 bg-black/50 border-t border-orange-500/20 space-y-6">
+                            <footer className="p-8 bg-[rgb(var(--background-rgb)/50%)] border-t border-orange-500/20 space-y-6 transition-colors duration-500">
                                 <div className="flex justify-between items-baseline">
                                     <span className="text-[10px] uppercase font-black opacity-40">Subtotal_Molecules</span>
                                     <span className="text-2xl font-black tracking-tighter">${subtotal.toFixed(2)}</span>

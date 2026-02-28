@@ -6,6 +6,18 @@
   /* Off-white lab grey */
   --accent: 255, 95, 31;
   /* Lab Orange */
+  --card-bg: 255, 255, 255;
+  --border-color: 0, 0, 0;
+}
+
+[data-theme='dark'] {
+  --foreground-rgb: 220, 220, 220;
+  --background-rgb: 10, 10, 14;
+  /* Deep Tech Black */
+  --accent: 255, 110, 50;
+  /* Slightly brighter orange for dark */
+  --card-bg: 18, 18, 22;
+  --border-color: 40, 40, 45;
 }
 
 @theme inline {

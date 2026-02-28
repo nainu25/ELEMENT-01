@@ -14,7 +14,8 @@ export async function getProductsWithNotes(): Promise<Product[]> {
               category
             )
           )
-        `);
+        `)
+    .eq('is_deleted', false);
 
   if (error) throw error;
   return (data as unknown as Product[]) || [];
@@ -35,6 +36,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
           )
         `)
     .eq('slug', slug)
+    .eq('is_deleted', false)
     .single();
 
   if (error) {

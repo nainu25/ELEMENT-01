@@ -72,10 +72,10 @@ export default function ScentDiscovery() {
     };
 
     return (
-        <div className="min-h-[600px] flex flex-col items-center justify-center p-8 bg-white border border-black relative overflow-hidden font-mono">
+        <div className="min-h-[600px] flex flex-col items-center justify-center p-8 bg-[rgb(var(--background-rgb))] border border-[rgb(var(--border-color))] relative overflow-hidden font-mono transition-colors duration-500">
             {/* Background Decoration */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,black_1px,transparent_1px)] bg-[size:40px_40px]" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgb(var(--foreground-rgb))_1px,transparent_1px)] bg-[size:40px_40px]" />
             </div>
 
             <AnimatePresence mode="wait">
@@ -87,8 +87,8 @@ export default function ScentDiscovery() {
                         exit={{ opacity: 0 }}
                         className="text-center space-y-8"
                     >
-                        <div className="w-32 h-32 border-4 border-black border-t-orange-500 rounded-full animate-spin mx-auto flex items-center justify-center">
-                            <div className="w-20 h-20 border-2 border-dashed border-black rounded-full animate-spin-reverse" />
+                        <div className="w-32 h-32 border-4 border-[rgb(var(--border-color))] border-t-orange-500 rounded-full animate-spin mx-auto flex items-center justify-center transition-colors duration-500">
+                            <div className="w-20 h-20 border-2 border-dashed border-[rgb(var(--border-color))] rounded-full animate-spin-reverse transition-colors duration-500" />
                         </div>
                         <div className="space-y-2">
                             <h2 className="text-2xl font-black uppercase tracking-widest">Processing_Data</h2>
@@ -104,7 +104,7 @@ export default function ScentDiscovery() {
                         className="w-full max-w-2xl space-y-12"
                     >
                         <header className="space-y-2">
-                            <span className="text-[10px] font-black bg-black text-white px-3 py-1 uppercase tracking-widest">Phase_01</span>
+                            <span className="text-[10px] font-black bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] px-3 py-1 uppercase tracking-widest transition-colors duration-500">Phase_01</span>
                             <h2 className="text-4xl font-black uppercase tracking-tighter">Define Your Primary Atmosphere</h2>
                         </header>
 
@@ -117,7 +117,7 @@ export default function ScentDiscovery() {
                                 <button
                                     key={opt.id}
                                     onClick={() => handleEnvironment(opt.id as any)}
-                                    className="group p-8 border border-black hover:bg-black hover:text-white transition-all duration-300 text-left space-y-6"
+                                    className="group p-8 border border-[rgb(var(--border-color))] hover:bg-[rgb(var(--foreground-rgb))] hover:text-[rgb(var(--background-rgb))] transition-all duration-300 text-left space-y-6"
                                 >
                                     <opt.icon className="w-8 h-8 group-hover:stroke-orange-500 transition-colors" />
                                     <div>
@@ -137,7 +137,7 @@ export default function ScentDiscovery() {
                         className="w-full max-w-2xl space-y-12"
                     >
                         <header className="space-y-2">
-                            <span className="text-[10px] font-black bg-black text-white px-3 py-1 uppercase tracking-widest">Phase_02</span>
+                            <span className="text-[10px] font-black bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] px-3 py-1 uppercase tracking-widest transition-colors duration-500">Phase_02</span>
                             <h2 className="text-4xl font-black uppercase tracking-tighter">Determine Molecular Stability</h2>
                         </header>
 
@@ -149,7 +149,7 @@ export default function ScentDiscovery() {
                                 <button
                                     key={opt.id}
                                     onClick={() => handleIntensity(opt.id as any)}
-                                    className="group p-10 border border-black hover:bg-black hover:text-white transition-all duration-300 text-left space-y-6"
+                                    className="group p-10 border border-[rgb(var(--border-color))] hover:bg-[rgb(var(--foreground-rgb))] hover:text-[rgb(var(--background-rgb))] transition-all duration-300 text-left space-y-6"
                                 >
                                     <h3 className="text-3xl font-black uppercase tracking-tighter">{opt.id}</h3>
                                     <div className="space-y-4">
@@ -177,14 +177,14 @@ export default function ScentDiscovery() {
                         animate={{ opacity: 1, y: 0 }}
                         className="w-full max-w-4xl space-y-12"
                     >
-                        <header className="flex justify-between items-end border-b-2 border-black pb-8">
+                        <header className="flex justify-between items-end border-b-2 border-[rgb(var(--border-color))] pb-8">
                             <div>
                                 <span className="text-[10px] font-black bg-orange-500 text-black px-3 py-1 uppercase tracking-widest">Result_v4.2</span>
                                 <h2 className="text-5xl font-black uppercase tracking-tighter mt-4">Optimal Molecular Match</h2>
                             </div>
                             <button
                                 onClick={reset}
-                                className="flex items-center gap-2 text-[10px] font-black border border-black px-4 py-2 hover:bg-black hover:text-white transition-all"
+                                className="flex items-center gap-2 text-[10px] font-black border border-[rgb(var(--border-color))] px-4 py-2 hover:bg-[rgb(var(--foreground-rgb))] hover:text-[rgb(var(--background-rgb))] transition-all transition-colors duration-500"
                             >
                                 <RefreshCcw className="w-3 h-3" />
                                 REBOOT_ALGORITHM
@@ -196,15 +196,15 @@ export default function ScentDiscovery() {
                                 {results.length > 0 && (
                                     <div className="relative group">
                                         <ProductCard product={results[0]} />
-                                        <div className="absolute top-0 right-0 bg-black text-white p-6 -mr-4 -mt-4 z-[60] border border-orange-500 shadow-2xl">
+                                        <div className="absolute top-0 right-0 bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] p-6 -mr-4 -mt-4 z-[60] border border-orange-500 shadow-2xl transition-colors duration-500">
                                             <p className="text-[10px] uppercase font-black tracking-widest opacity-60 mb-1">Compatibility</p>
                                             <p className="text-5xl font-black italic tracking-tighter">{results[0].score}%</p>
                                         </div>
                                     </div>
                                 )}
                             </div>
-                            <div className="lg:col-span-5 space-y-8 bg-neutral-50 border border-dashed border-black/20 p-8">
-                                <h3 className="text-xs font-black uppercase tracking-[0.3em] border-b border-black pb-4">Algorithm_Notes</h3>
+                            <div className="lg:col-span-5 space-y-8 bg-[rgb(var(--foreground-rgb)/3%)] border border-dashed border-[rgb(var(--border-color)/20%)] p-8 transition-colors duration-500">
+                                <h3 className="text-xs font-black uppercase tracking-[0.3em] border-b border-[rgb(var(--border-color))] pb-4">Algorithm_Notes</h3>
                                 <ul className="space-y-6 text-[10px] font-bold uppercase tracking-widest leading-relaxed">
                                     <li className="flex gap-4">
                                         <span className="text-orange-500">[01]</span>

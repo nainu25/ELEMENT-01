@@ -8,11 +8,14 @@ import CheckoutForm from "@/components/checkout/CheckoutForm";
 import * as motion from "framer-motion/client";
 import { Lock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_test_51P...");
+// const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "pk_test_51P...");
+const stripePromise = null; // Stripe disabled for dummy testing
 
 export default function CheckoutPage() {
     const { items, getSubtotal } = useCart();
+    const { theme } = useTheme();
     const [clientSecret, setClientSecret] = useState("");
     const [hasMounted, setHasMounted] = useState(false);
     const [error, setError] = useState<string | null>(null);
@@ -21,6 +24,8 @@ export default function CheckoutPage() {
         setHasMounted(true);
         if (items.length === 0) return;
 
+        // Fetch commented out for dummy payment
+        /*
         fetch("/api/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,6 +40,12 @@ export default function CheckoutPage() {
                 console.error(err);
                 setError(err.message);
             });
+        */
+
+        // Simulating successful client secret acquisition
+        setTimeout(() => {
+            setClientSecret("pi_dummy_secret_123");
+        }, 1000);
     }, [items]);
 
     const appearance = {
@@ -64,14 +75,14 @@ export default function CheckoutPage() {
 
     if (!hasMounted) {
         return (
-            <main className="min-h-screen bg-[#F2F2F2] font-mono text-black pt-32 px-8 flex items-center justify-center">
+            <main className="min-h-screen bg-[rgb(var(--background-rgb))] font-mono text-[rgb(var(--foreground-rgb))] pt-32 px-8 flex items-center justify-center transition-colors duration-500">
                 <div className="animate-pulse text-[10px] font-black uppercase tracking-[0.5em]">Initializing_Secure_Node...</div>
             </main>
         );
     }
 
     return (
-        <main className="min-h-screen bg-[#F2F2F2] font-mono text-black pt-32 px-8 pb-32">
+        <main className="min-h-screen bg-[rgb(var(--background-rgb))] font-mono text-[rgb(var(--foreground-rgb))] pt-32 px-8 pb-32 transition-colors duration-500">
             <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
                 {/* Back Link */}
@@ -83,10 +94,10 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Checkout Column */}
-                <div className="lg:col-span-7 bg-white border border-black p-12 shadow-xl relative overflow-hidden">
-                    <header className="mb-12 border-b-2 border-black pb-8">
+                <div className="lg:col-span-7 bg-[rgb(var(--card-bg))] border border-[rgb(var(--border-color))] p-12 shadow-xl relative overflow-hidden transition-colors duration-500">
+                    <header className="mb-12 border-b-2 border-[rgb(var(--border-color))] pb-8">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 bg-black text-white flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] flex items-center justify-center transition-colors duration-500">
                                 <Lock className="w-4 h-4" />
                             </div>
                             <span className="text-[10px] font-black uppercase tracking-[0.3em]">SECURE_NODE_01</span>
@@ -103,22 +114,22 @@ export default function CheckoutPage() {
                             </div>
                         </div>
                     ) : clientSecret ? (
-                        <Elements options={{ clientSecret, appearance }} stripe={stripePromise}>
-                            <CheckoutForm />
-                        </Elements>
+                        /* <Elements options={{ clientSecret, appearance }} stripe={stripePromise}> */
+                        <CheckoutForm />
+                        /* </Elements> */
                     ) : (
                         <div className="space-y-8 animate-pulse">
-                            <div className="h-10 w-full bg-neutral-100" />
-                            <div className="h-40 w-full bg-neutral-100" />
-                            <div className="h-12 w-full bg-black/10" />
+                            <div className="h-10 w-full bg-[rgb(var(--foreground-rgb)/5%)]" />
+                            <div className="h-40 w-full bg-[rgb(var(--foreground-rgb)/5%)]" />
+                            <div className="h-12 w-full bg-[rgb(var(--foreground-rgb)/10%)]" />
                         </div>
                     )}
                 </div>
 
                 {/* Summary Column */}
                 <aside className="lg:col-span-5 space-y-8">
-                    <div className="bg-black text-white p-10 border border-black space-y-8">
-                        <h2 className="text-xs font-black uppercase tracking-[0.3em] border-b border-white/20 pb-4">Order_Summary</h2>
+                    <div className="bg-[rgb(var(--foreground-rgb))] text-[rgb(var(--background-rgb))] p-10 border border-[rgb(var(--border-color))] space-y-8 transition-colors duration-500">
+                        <h2 className="text-xs font-black uppercase tracking-[0.3em] border-b border-[rgb(var(--background-rgb)/20%)] pb-4">Order_Summary</h2>
 
                         <div className="space-y-6 max-h-[300px] overflow-y-auto custom-scrollbar pr-4">
                             {items.map(item => (
@@ -132,7 +143,7 @@ export default function CheckoutPage() {
                             ))}
                         </div>
 
-                        <div className="pt-8 border-t border-white/20 space-y-4">
+                        <div className="pt-8 border-t border-[rgb(var(--background-rgb)/20%)] space-y-4">
                             <div className="flex justify-between items-baseline opacity-40">
                                 <span className="text-[10px] uppercase font-black">Transport_Fee</span>
                                 <span className="text-xs font-black">$0.00 [LAB_CREDIT]</span>
@@ -144,7 +155,7 @@ export default function CheckoutPage() {
                         </div>
                     </div>
 
-                    <div className="p-8 border border-black/10 text-[9px] uppercase font-black opacity-30 leading-relaxed text-center">
+                    <div className="p-8 border border-[rgb(var(--border-color)/10%)] text-[9px] uppercase font-black opacity-30 leading-relaxed text-center transition-colors duration-500">
                         Allocation is final once payment protocol is successfully terminated. E01-LABS maintains strict chain-of-custody for all molecular specimens.
                     </div>
                 </aside>

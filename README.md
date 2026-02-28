@@ -1,6 +1,6 @@
 # ELEMENT-01 // Digital Olfactory Laboratory
 
-![ELEMENT-01 Banner] ![alt text](image.png)
+![ELEMENT-01 Banner] ![alt text](./element-01/src//assets/Dashboard.png)
 
 **ELEMENT-01** is a high-performance, molecular-focused fragrance discovery platform. It treats scent selection as a scientific process, utilizing a "Digital Laboratory" aesthetic to bridge the gap between complex chemistry and luxury consumer experience.
 

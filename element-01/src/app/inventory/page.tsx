@@ -277,40 +277,40 @@ export default function InventoryPage() {
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Molecular_Slug</label>
-                                        <input required value={formData.slug} onChange={e => setFormData({ ...formData, slug: e.target.value })} placeholder="e.g., amber-mod-01" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none transition-colors" />
+                                        <input required value={formData.slug} onChange={e => setFormData({ ...formData, slug: e.target.value })} placeholder="e.g., amber-mod-01" className="w-full border-2 border-[rgb(var(--border-color)/10%)] bg-[rgb(var(--background-rgb))] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Financial_Value ($)</label>
-                                        <input required type="number" step="0.01" value={formData.price} onChange={e => setFormData({ ...formData, price: e.target.value })} placeholder="0.00" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none transition-colors" />
+                                        <input required type="number" step="0.01" value={formData.price} onChange={e => setFormData({ ...formData, price: e.target.value })} placeholder="0.00" className="w-full border-2 border-[rgb(var(--border-color)/10%)] bg-[rgb(var(--background-rgb))] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                 </div>
                                 <div className="space-y-4">
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Formula_Registry_Code</label>
-                                        <input required value={formData.formula_code} onChange={e => setFormData({ ...formData, formula_code: e.target.value })} placeholder="e.g., C20H32O" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none transition-colors" />
+                                        <input required value={formData.formula_code} onChange={e => setFormData({ ...formData, formula_code: e.target.value })} placeholder="e.g., C20H32O" className="w-full border-2 border-[rgb(var(--border-color)/10%)] bg-[rgb(var(--background-rgb))] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Stock_Volume</label>
-                                        <input required type="number" value={formData.stock_quantity} onChange={e => setFormData({ ...formData, stock_quantity: e.target.value })} placeholder="50" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none transition-colors" />
+                                        <input required type="number" value={formData.stock_quantity} onChange={e => setFormData({ ...formData, stock_quantity: e.target.value })} placeholder="50" className="w-full border-2 border-[rgb(var(--border-color)/10%)] bg-[rgb(var(--background-rgb))] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] opacity-40">Description_Log</label>
-                                        <textarea required value={formData.description} onChange={e => setFormData({ ...formData, description: e.target.value })} placeholder="Detailed specimen analysis..." className="w-full border-2 border-black/10 p-3 text-xs h-20 focus:border-black outline-none transition-colors resize-none" />
+                                        <textarea required value={formData.description} onChange={e => setFormData({ ...formData, description: e.target.value })} placeholder="Detailed specimen analysis..." className="w-full border-2 border-[rgb(var(--border-color)/10%)] bg-[rgb(var(--background-rgb))] p-3 text-xs h-20 focus:border-[rgb(var(--foreground-rgb))] outline-none transition-colors resize-none text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                 </div>
 
                                 <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-10 pt-6 border-t-2 border-black/5">
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">Top_Notes (CSV)</label>
-                                        <input value={formData.top_notes} onChange={e => setFormData({ ...formData, top_notes: e.target.value })} placeholder="e.g. Bergamot, Lemon" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none bg-blue-50/30 transition-colors" />
+                                        <input value={formData.top_notes} onChange={e => setFormData({ ...formData, top_notes: e.target.value })} placeholder="e.g. Bergamot, Lemon" className="w-full border-2 border-[rgb(var(--border-color)/10%)] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none bg-[rgb(var(--foreground-rgb)/3%)] transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] text-pink-600">Heart_Notes (CSV)</label>
-                                        <input value={formData.heart_notes} onChange={e => setFormData({ ...formData, heart_notes: e.target.value })} placeholder="e.g. Rose, Jasmine" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none bg-pink-50/30 transition-colors" />
+                                        <input value={formData.heart_notes} onChange={e => setFormData({ ...formData, heart_notes: e.target.value })} placeholder="e.g. Rose, Jasmine" className="w-full border-2 border-[rgb(var(--border-color)/10%)] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none bg-[rgb(var(--foreground-rgb)/3%)] transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                     <div className="space-y-3">
                                         <label className="text-[10px] font-black uppercase tracking-[0.2em] text-orange-600">Base_Notes (CSV)</label>
-                                        <input value={formData.base_notes} onChange={e => setFormData({ ...formData, base_notes: e.target.value })} placeholder="e.g. Musk, Amber" className="w-full border-2 border-black/10 p-3 text-xs focus:border-black outline-none bg-orange-50/30 transition-colors" />
+                                        <input value={formData.base_notes} onChange={e => setFormData({ ...formData, base_notes: e.target.value })} placeholder="e.g. Musk, Amber" className="w-full border-2 border-[rgb(var(--border-color)/10%)] p-3 text-xs focus:border-[rgb(var(--foreground-rgb))] outline-none bg-[rgb(var(--foreground-rgb)/3%)] transition-colors text-[rgb(var(--foreground-rgb))]" />
                                     </div>
                                 </div>
                                 <div className="md:col-span-2 pt-6">
@@ -346,13 +346,13 @@ export default function InventoryPage() {
                                                 <div className="font-black uppercase text-xs">{product.name}</div>
                                                 <div className="opacity-40 text-[8px] mt-1 space-x-2">
                                                     <span className="tracking-widest">{product.slug}</span>
-                                                    <span className="text-blue-500 font-bold bg-blue-50 px-1.5 py-0.5 border border-blue-100 italic">MOD: {new Date(product.updated_at || '').toLocaleDateString('en-GB')}</span>
+                                                    <span className="text-blue-500 font-black bg-blue-500/10 px-1.5 py-0.5 border border-blue-500/20 italic">MOD: {new Date(product.updated_at || '').toLocaleDateString('en-GB')}</span>
                                                 </div>
                                             </td>
                                             <td className="p-6 font-black text-orange-600 tracking-[0.1em]">{product.formula_code}</td>
                                             <td className="p-6 font-black text-sm">${product.price.toFixed(2)}</td>
                                             <td className="p-6 text-center">
-                                                <span className={`px-3 py-1.5 font-black inline-block min-w-[40px] ${product.stock_quantity < 10 ? 'bg-red-500 text-white' : 'bg-neutral-100'}`}>
+                                                <span className={`px-3 py-1.5 font-black inline-block min-w-[40px] transition-colors duration-500 ${product.stock_quantity < 10 ? 'bg-red-500 text-white' : 'bg-[rgb(var(--foreground-rgb)/10%)] text-[rgb(var(--foreground-rgb))]'}`}>
                                                     {product.stock_quantity}
                                                 </span>
                                             </td>
